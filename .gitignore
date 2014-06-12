@@ -1,0 +1,16 @@
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+
+examples/bcast
+examples/recv_source
+examples/sendrecv
+examples/tokenring
+
+
