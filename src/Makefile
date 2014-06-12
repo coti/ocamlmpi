@@ -4,7 +4,7 @@ OCAMLDEP=ocamldep
 
 DESTDIR=`$(OCAMLC) -where`/ocamlmpi
 MPIINCDIR=/usr/local/include
-MPILIBDIR=/usr/local/lib/
+MPILIBDIR=/usr/local/lib
 
 CC=gcc
 CFLAGS=-I`$(OCAMLC) -where` -I$(MPIINCDIR) -O -g -Wall
@@ -14,8 +14,8 @@ OBJS=mpi.cmo
 
 all: libcamlmpi.a mpi.cma mpi.cmxa
 
-install:
-	mkdir $(DESTDIR)
+install: libcamlmpi.a mpi.cma mpi.cmxa
+	if [ ! -e $(DESTDIR) ] ; then mkdir $(DESTDIR) ; fi
 	cp mpi.mli mpi.cmi mpi.cma mpi.cmxa mpi.a libcamlmpi.a $(DESTDIR)
 
 libcamlmpi.a: $(COBJS)
