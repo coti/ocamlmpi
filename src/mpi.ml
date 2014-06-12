@@ -92,7 +92,7 @@ let receive source tag comm =
 
 let receive_status source tag comm =
   let (len, actual_source, actual_tag) = probe source tag comm in
-  let v = receive_basic len source tag comm in
+  let v = receive_basic len actual_source actual_tag comm in
   (v, actual_source, actual_tag)
 
 let probe source tag comm =
