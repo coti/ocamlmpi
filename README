@@ -54,14 +54,7 @@ That is:
 
 BUILDING OCAMLMPI:
 
-Edit the Makefile and set the MPIINCDIR, MPILIBDIR and DESTDIR
-variables to the right directories:
-
-MPIINCDIR    directory containing the MPI include file <mpi.h>
-MPILIBDIR    directory containing the MPI library -lmpi
-DESTDIR      where to install the OcamlMPI library
-
-Also adjust CC and CFLAGS if necessary.  Then do "make all".
+Traditional ./configure, make, make install building process.
 
 For final installation: become super-user and do "make install".
 
@@ -72,6 +65,12 @@ There are two test programs included:
       testmpi is a regression test
       test_mandel is a parallel Mandelbrot set plotter
 
+Some examples are provided in the examples/ directory.
+
+
+DOCUMENTATION
+
+Some document files are provided in the doc/ directory.
 
 USING OCAMLMPI:
 
@@ -91,9 +90,10 @@ special exception on clause 6 described in the file LICENSE.
 
 AUTHOR AND SUPPORT:
 
-Written by Xavier Leroy <Xavier.Leroy@inria.fr>.  Bug reports are
-welcome, but I don't guarantee any support for this code.  It is
-provided "as is".
+The original version was written by Xavier Leroy from INRIA. Fixes 
+and additions provided here were written by Camille Coti (LIPN, Univ. 
+Paris 13). Bug reports are welcome, but we don't guarantee any support 
+for this code.  It is provided "as is".
 
 Questions about the following issues should be directed to MPI
 newsgroups, mailing-lists or implementation vendors, but not to me:
