@@ -4,8 +4,13 @@
 # automake --force-missing --add-missing
 # autoconf
 
+## libtoolize --force && aclocal && autoheader && automake --force-missing --add-missing && autoconf
 
 AC_CONFIG_MACRO_DIR([m4])
+#LT_INIT
+#LT_LANG([C,OCaml])
+AM_PROG_AR
+LT_INIT
 
 AC_PREREQ([2.69])
 AC_INIT([OCamlMPI], [1.1.0], [coti@lipn.fr])
@@ -32,7 +37,7 @@ fi
 AC_CHECK_HEADERS([mpi.h], [AC_CHECK_LIB([mpi], [MPI_Init], [mpi=1])])
 if test "$mpi" != 1
 then
- AC_MSG_ERROR([MSH requires MPI libraries])
+ AC_MSG_ERROR([OCamlMPI requires MPI libraries])
 fi
 
 AC_CONFIG_FILES([src/Makefile])
